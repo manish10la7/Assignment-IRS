@@ -1,0 +1,10 @@
+
+Okapi BM25 is a ranking function used by search engines to estimate the relevance of documents
+to a given search query. It is based on probabilistic retrieval frameworks and considers
+term frequency, document frequency, and document length normalization. The formula is:
+BM25(d,q) = sum_i [ IDF(q_i) * (f(q_i,d) * (k+1)) / (f(q_i,d) + k * (1 - b + b * |d| / avgdl)) ]
+where f(q_i,d) is the term frequency of term q_i in document d, |d| is the length of document d,
+avgdl is the average document length, and k, b are tunable parameters. BM25 is widely used
+because it provides robust ranking performance and is relatively easy to implement.
+Example: In a news search engine, BM25 can rank articles higher if the search terms appear frequently
+and in shorter articles.

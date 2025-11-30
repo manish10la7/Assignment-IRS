@@ -1,0 +1,11 @@
+
+The Language Model with Jelinek-Mercer Smoothing is a probabilistic approach to document ranking
+that estimates the likelihood of generating a query from a document's language model. Smoothing is
+applied to handle zero probabilities for unseen words. The Jelinek-Mercer formula is:
+P(w|d) = (1 - lambda) * P_ml(w|d) + lambda * P(w|C)
+where P_ml(w|d) is the maximum likelihood estimate of word w in document d, P(w|C) is the
+probability of word w in the entire collection, and lambda is the smoothing parameter between 0 and 1.
+This method helps improve retrieval accuracy by considering both document-specific and collection-wide
+word distributions.
+Example: In a digital library search, this model can rank documents that may not contain all query terms
+but have semantically related words frequently occurring across the collection.

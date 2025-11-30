@@ -1,0 +1,18 @@
+
+Comparative Analysis: Okapi BM25 vs Language Model with Jelinek-Mercer Smoothing
+
+BM25 relies heavily on term frequency and document length normalization, making it suitable for
+traditional keyword-based search systems. It is easy to understand and tune for specific domains.
+In contrast, the Jelinek-Mercer Language Model uses probabilistic smoothing to estimate query likelihoods,
+allowing it to capture broader term distributions across the collection.
+
+Practical application differences:
+- BM25 is often preferred in web search engines due to its efficiency and strong empirical performance.
+- Jelinek-Mercer is valuable in academic and research search systems where the presence of related terms
+  matters more than exact term matches.
+
+Both models can be implemented in Python using libraries like `rank_bm25` for BM25 and `whoosh` or custom
+language model scripts for Jelinek-Mercer. Understanding their strengths and limitations is key to
+choosing the appropriate scoring function for a given information retrieval task.
+Example: Comparing rankings of scientific papers with BM25 vs JM shows BM25 favors short, keyword-rich
+abstracts, while JM may favor papers with broader contextual relevance.
